@@ -1,0 +1,47 @@
+type Query {
+  commanders(colors: String!): [Commander]
+  videos(name: String! pageToken: String): YoutubeApiResponse
+}
+
+type Commander {
+  name: String
+  image_uris: ImageUri
+  multiverse_ids: [Int]
+}
+
+type ImageUri {
+  small: String
+}
+
+type YoutubeApiResponse {
+  items: [Video]
+  nextPageToken: String
+}
+
+type Video {
+  id: VideoId
+  snippet: Snippet
+}
+
+type VideoId {
+  videoId: String
+}
+
+type Snippet {
+  channelId: String
+  channelTitle: String
+  description: String
+  publishedAt: String
+  thumbnails: Thumbnails
+  title: String
+}
+
+type Thumbnails {
+  default: ThumbnailsSize
+  high: ThumbnailsSize
+  medium: ThumbnailsSize
+}
+
+type ThumbnailsSize {
+  url: String
+}

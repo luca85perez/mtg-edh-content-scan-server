@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const HttpsProxyAgent = require('https-proxy-agent');
+// const HttpsProxyAgent = require('https-proxy-agent');
 
 /**
  * @description
@@ -13,9 +13,6 @@ function commanders(root, args, context) {
 
   return fetch(
     `https://api.scryfall.com/cards/search?q=identity=${colors}+is:commander`,
-    {
-      agent: new HttpsProxyAgent('http://lucas.pereira:L%40124578@10.0.0.254:3128/')
-    }
   )
     .then(response => response.json())
     .then(result => {
@@ -49,9 +46,6 @@ async function videos(root, args, context) {
 
   return fetch(
     `https://www.googleapis.com/youtube/v3/search?${options.join('&')}`,
-    {
-      agent: new HttpsProxyAgent('http://lucas.pereira:L%40124578@10.0.0.254:3128/')
-    }
   )
     .then(response => {
       const json = response.json();

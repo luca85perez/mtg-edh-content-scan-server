@@ -12,7 +12,10 @@ const server = new GraphQLServer({
 server.start({
   cors: {
     credentials: true,
-    origin: 'http://localhost:3000',
+    origin: [
+      'http://localhost:3000',
+      'http://localhost:3000/',
+    ],
   },
   port: process.env.PORT || 4000,
 }, () => console.log(`Server is running`));

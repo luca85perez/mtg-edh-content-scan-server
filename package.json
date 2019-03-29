@@ -1,6 +1,20 @@
 {
-  "name": "my-app-back",
+  "name": "mtg-edh-content-scan-server",
   "version": "1.0.0",
+  "description": "A Node.js server with GraphQL Api to intercept calls to Scryfall Api and Youtube Api, returns MTG EDH related content.",
+  "keywords": [
+    "mtg",
+    "edh",
+    "node",
+    "graphql",
+    "scryfall api",
+    "youtube api"
+  ],
+  "author": "Lucas Pereira",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luca85perez/mtg-edh-content-scan-server.git"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

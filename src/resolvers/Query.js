@@ -46,14 +46,7 @@ async function videos(root, args, context) {
 
   return fetch(
     `https://www.googleapis.com/youtube/v3/search?${options.join('&')}`,
-  )
-    .then(response => {
-      const json = response.json();
-      return json;
-    })
-    .then(result => {
-      return result;
-    });
+  ).then(response => response.json());
 }
 
 module.exports = {

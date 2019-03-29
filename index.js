@@ -10,5 +10,5 @@ const server = new GraphQLServer({
   resolvers,
 });
 server.start({
-  port: 8081,
-}, () => console.log(`Server is running on port 8081`));
+  port: process.env.PORT || 4000,
+}, () => console.log(`Server is running`));
